@@ -1,0 +1,23 @@
+@media (max-width:1023px){.grid3{grid-template-columns:1fr 1fr}.bento{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:768px){.bottom-bar,.sheet,.sheet-backdrop{display:none}.fab{bottom:24px}.sheet .settings{display:none}}
+@media (max-width:767px){
+ .pill-nav{display:none}.bottom-bar{display:flex}.grid2,.grid3{grid-template-columns:1fr}
+ .bento{grid-template-columns:repeat(2,1fr)}.hero-main{grid-column:span 2}.hero{padding-top:32px}
+ .filters{top:8px}h1{font-size:28px}.photo{width:120px;height:120px}}
+@media (max-width:480px){.sheet-links{grid-template-columns:repeat(2,1fr)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media print{.pill-nav,.bottom-bar,.fab,.sheet,.sheet-backdrop,.blobs,.progress,.filters,.charts,.toast{display:none!important}
+ body{background:#fff;color:#000;padding:0}.glass{background:none;box-shadow:none;border:1px solid #ccc;backdrop-filter:none}.rv{opacity:1;transform:none}section{break-inside:avoid;padding-top:16px}}
+
+/* ===== v1.1 ===== */
+@media (max-width:1023px){.tabpane.on{grid-template-columns:1fr 1fr}.f-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:767px){
+ main{padding:0 16px}.page{min-height:auto;padding:24px 0 24px}
+ #home.active{min-height:calc(100vh - 110px);padding-top:16px}
+ .home-wrap{grid-template-columns:1fr;gap:20px;text-align:center}.home-photo{order:-1}.home-text{align-items:center}.row,.socials{justify-content:center}
+ .about-grid,.contact-grid,.charts{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr);gap:20px}
+ .research-grid{grid-template-columns:1fr 1fr!important;gap:12px}.research-grid .card{padding:14px}.research-grid h3{font-size:16px}
+ .charts{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px}.charts>*{flex:0 0 88%;scroll-snap-align:center}
+ .tabpane.on{grid-template-columns:1fr}.card{padding:18px}.ccard{flex-wrap:wrap}.acts{margin-left:70px}
+ .f-grid{grid-template-columns:1fr;gap:20px}.site-footer{padding:22px;margin-bottom:110px;width:calc(100% - 32px)}.f-bottom{justify-content:center;text-align:center}
+ .filters{position:static}}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-accent="indigo">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. A. B. Rahman | Professor, University of Chittagong</title>
+<meta name="description" content="Official portfolio of Dr. A. B. Rahman, Professor, Dept. of CSE, University of Chittagong.">
+<meta property="og:title" content="Dr. A. B. Rahman | Professor, CU">
+<meta property="og:image" content="assets/images/profile.jpg">
+<link rel="icon" href="assets/images/logo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<script>/* no-flash theme */
+(function(){try{var d=document.documentElement,t=localStorage.getItem('tp-theme')||'auto',a=localStorage.getItem('tp-accent'),l=localStorage.getItem('tp-lang')||'en';
+if(t==='auto')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+d.dataset.theme=t;if(a&&a[0]!=='#')d.dataset.accent=a;else if(a)d.style.setProperty('--accent',a);d.lang=l;}catch(e){}})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Dr. A. B. Rahman","jobTitle":"Professor","affiliation":{"@type":"CollegeOrUniversity","name":"University of Chittagong"}}</script>
+</head>
+<body>
+<div class="blobs" aria-hidden="true"><span></span><span></span></div>
+<div class="progress" id="progress"></div>
+
+<header class="pill-nav glass" id="pillNav">
+  <span class="bubble" id="bubble"></span>
+  <a href="#home" data-nav="home" data-i18n="nav_home">Home</a><a href="#about" data-nav="about" data-i18n="nav_about">About</a>
+  <a href="#research" data-nav="research" data-i18n="nav_research">Research</a><a href="#publications" data-nav="publications" data-i18n="nav_papers">Papers</a>
+  <a href="#teaching" data-nav="teaching" data-i18n="nav_teaching">Teaching</a><a href="#contact" data-nav="contact" data-i18n="nav_contact">Contact</a>
+  <button class="icon-btn" id="settingsBtn" aria-label="Settings">⚙</button>
+</header>
+
+<main>
+  <!-- HOME: shudhu porichiti -->
+  <section class="page" id="home">
+    <div class="home-wrap">
+      <div class="home-text">
+        <span class="badge" id="superviseBadge" hidden data-i18n="open_sup">Open to supervise</span>
+        <p class="hello" data-i18n="hello">Hello, I am</p>
+        <h1 id="heroName"></h1>
+        <p class="role" id="heroTitle"></p>
+        <p class="tag" id="heroTag"></p>
+        <p class="intro" id="intro"></p>
+        <div class="row"><a class="btn" href="#about" data-i18n="know_more">More about me</a><a class="btn ghost" href="assets/files/cv.pdf" download data-i18n="dl_cv">Download CV</a></div>
+        <div class="socials" id="socials"></div>
+      </div>
+      <div class="home-photo"><div class="ring"></div><img class="photo" src="assets/images/profile.jpg" alt="Profile photo" width="320" height="320"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT: details -->
+  <section class="page" id="about">
+    <header class="page-head"><h2 data-i18n="nav_about">About</h2><p class="muted" data-i18n="about_sub"></p></header>
+    <div class="about-grid">
+      <div class="card glass full"><h3 data-i18n="who">Biography</h3><p id="bio"></p><div id="interests"></div></div>
+      <div class="card glass full stats-row">
+        <div><b data-count="papers">0</b><span data-i18n="papers">Papers</span></div><div><b data-count="citations">0</b><span data-i18n="citations">Citations</span></div>
+        <div><b data-count="hindex">0</b><span data-i18n="hindex">h-index</span></div><div><b data-count="students">0</b><span data-i18n="supervised">Supervised</span></div>
+      </div>
+      <div class="card glass"><h3 data-i18n="edu">Education &amp; experience</h3><ol class="timeline" id="timeline"></ol></div>
+      <div class="card glass" id="awardCard"><h3 data-i18n="nav_awards">Awards</h3><div id="awardList"></div></div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="page" id="research">
+    <header class="page-head"><h2 data-i18n="nav_research">Research</h2><p class="muted" data-i18n="res_sub"></p></header>
+    <div class="grid3 research-grid" id="researchList"></div>
+    <div class="charts"><div class="card glass"><div class="chartbox"><canvas id="chartYear"></canvas></div><p class="sr" id="sumYear"></p></div>
+    <div class="card glass"><div class="chartbox"><canvas id="chartType"></canvas></div><p class="sr" id="sumType"></p></div></div>
+    <div id="projectBlock"><h3 class="sub" data-i18n="nav_projects">Projects &amp; grants</h3><div class="grid3" id="projectList"></div></div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="page" id="publications">
+    <header class="page-head"><h2 data-i18n="pub_title">Publications</h2><p class="muted" data-i18n="pub_sub"></p></header>
+    <div class="filters glass"><input id="pubSearch" type="search" aria-label="Search publications">
+      <select id="pubType" aria-label="Type"><option value="">All</option><option value="journal">Journal</option><option value="conf">Conference</option><option value="book">Book chapter</option></select>
+      <select id="pubSort" aria-label="Sort"><option value="new">Newest</option><option value="cites">Most cited</option></select></div>
+    <p class="muted" id="pubCount"></p><div id="pubList"></div>
+  </section>
+
+  <!-- TEACHING (tabs: courses, students, talks, news) -->
+  <section class="page" id="teaching">
+    <header class="page-head"><h2 data-i18n="teach_title">Teaching</h2><p class="muted" data-i18n="teach_sub"></p></header>
+    <div class="tabs" id="teachTabs" role="tablist"></div>
+    <div class="tabpane" id="courseList"></div><div class="tabpane" id="studentList"></div>
+    <div class="tabpane" id="talkList"></div><div class="tabpane" id="newsList"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="page" id="contact">
+    <header class="page-head"><h2 data-i18n="nav_contact">Contact</h2><p class="muted" data-i18n="contact_sub"></p></header>
+    <div class="contact-grid">
+      <div><div id="contactCards"></div><div class="socials" id="contactSocials"></div></div>
+      <form class="card glass" id="msgForm">
+        <label class="field"><span data-i18n="your_name">Your name</span><input name="n" required autocomplete="name"></label>
+        <label class="field"><span data-i18n="your_email">Your email</span><input name="e" type="email" required autocomplete="email"></label>
+        <label class="field"><span data-i18n="your_msg">Message</span><textarea name="m" rows="5" required></textarea></label>
+        <button class="btn" type="submit" data-i18n="send">Send message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer glass">
+  <div class="f-grid">
+    <div><h3 id="fName"></h3><p class="muted" id="fDept"></p><div class="socials" id="fSocials"></div></div>
+    <div><h4 data-i18n="quick">Quick links</h4><div class="f-links" id="fLinks"></div></div>
+    <div><h4 data-i18n="nav_contact">Contact</h4><p id="fContact"></p></div>
+  </div>
+  <div class="f-bottom"><span id="footer"></span><button class="btn ghost" id="toTop"><span data-i18n="top">Top</span> ↑</button></div>
+</footer>
+
+<nav class="bottom-bar glass" aria-label="Main">
+  <a href="#home" data-nav="home"><i>🏠</i><span data-i18n="nav_home">Home</span></a><a href="#about" data-nav="about"><i>👤</i><span data-i18n="nav_about">About</span></a>
+  <a href="#publications" data-nav="publications"><i>📄</i><span data-i18n="nav_papers">Papers</span></a><a href="#contact" data-nav="contact"><i>✉</i><span data-i18n="nav_contact">Contact</span></a>
+  <button id="moreBtn" aria-haspopup="dialog"><i>☰</i><span data-i18n="more">More</span></button>
+</nav>
+<div class="sheet-backdrop" id="backdrop"></div>
+<aside class="sheet glass" id="sheet" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+  <div class="sheet-handle" id="handle"></div>
+  <div class="sheet-links" id="sheetLinks"></div>
+  <div class="settings" id="settings">
+    <div class="seg"><button data-v="light">☀ Light</button><button data-v="dark">🌙 Dark</button><button data-v="auto">Auto</button></div>
+    <div class="swatches" id="swatches"></div>
+    <div class="row"><button class="btn" id="langBtn">EN | বাং</button><button class="btn ghost" id="resetBtn" data-i18n="reset">Reset</button></div>
+  </div>
+</aside>
+
+<div class="fab" id="fab">
+  <div class="fab-items"><a href="#contact" aria-label="Contact">✉</a><a href="assets/files/cv.pdf" download aria-label="CV">📄</a><button id="shareBtn" aria-label="Share">🔗</button><button id="topBtn" aria-label="Back to top">↑</button></div>
+  <button class="fab-main" id="fabBtn" aria-label="Actions" aria-expanded="false">+</button>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+</body></html>
